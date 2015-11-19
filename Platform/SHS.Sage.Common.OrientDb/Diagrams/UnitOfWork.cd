@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="OTrackingQueryProvider creates OTrackingQueryExecutor">
+    <Position X="3.04" Y="2.219" Height="0.519" Width="2.197" />
+  </Comment>
+  <Comment CommentText="ORepository creates OTrackingQueryProvider.  Attach&lt;T&gt;() passes the instance to TrackingManager.Track&lt;T&gt;() to enlist the item in the tracking system.">
+    <Position X="6.057" Y="1.202" Height="1.166" Width="2.151" />
+  </Comment>
+  <Comment CommentText="Wrap method invokes Attach&lt;T&gt;() on ORepository for each entity read from the repository">
+    <Position X="0.509" Y="6.808" Height="0.866" Width="1.989" />
+  </Comment>
+  <Comment CommentText="ProxiedIdentifiableCopier overrides Clone to ensure that all cloned instances are of type IProxyIdentifiable">
+    <Position X="15.5" Y="8.149" Height="1.039" Width="1.758" />
+  </Comment>
+  <Comment CommentText="If the instance implements ICloneable or ICopyable, the IdentifiableCopier will use those interfaces, otherwise, it will generate runtime compiled expressions to perform the Clone and Copy operations.">
+    <Position X="15.5" Y="1.968" Height="1.582" Width="1.7" />
+  </Comment>
+  <Comment CommentText="If the tracked IIdentifiable implements INotiyPropertyChanged, TrackedIdentifiable will listen for changes to determine if the instance has changed and requires saving.  Otherwise, it will utilize a memberwise, public property comparison routine to determine if any properties have changed.  To facilitate this, the tracked IIdentifiable instance will be Copied/Cloned at various points using an implementation of ICopyIdentifiables provided by the TrackingManager.">
+    <Position X="7.137" Y="7.834" Height="2.877" Width="2.024" />
+  </Comment>
+  <Class Name="SHS.Sage.Linq.OTrackingQueryProvider">
+    <Position X="3" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\OTrackingQueryProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Linq.OTrackingQueryExecutor">
+    <Position X="3" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\OTrackingQueryExecutor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Linq.UnitOfWork.TrackingQueryProvider">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="SHS.Sage.Linq.UnitOfWork.TrackingQueryExecutor">
+    <Position X="0.5" Y="3.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SHS.Sage.UnitOfWork.TrackingManager">
+    <Position X="9.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="SHS.Sage.UnitOfWork.TrackedIdentifiable&lt;T&gt;">
+    <Position X="9.5" Y="7" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="SHS.Sage.UnitOfWork.TrackedIdentifiable">
+    <Position X="9.5" Y="4" Width="1.75" />
+    <AssociationLine Name="Identifiable" Type="SHS.Sage.IIdentifiable" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="6.062" />
+        <Point X="11.625" Y="6.062" />
+        <Point X="11.625" Y="6.82" />
+        <Point X="13.25" Y="6.82" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Repository" Type="SHS.Sage.IRepository" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.5" Y="5.375" />
+        <Point X="9.125" Y="5.375" />
+        <Point X="9.125" Y="6.91" />
+        <Point X="8.25" Y="6.91" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.12" Y="-0.232" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Identifiable" />
+      <Property Name="Repository" />
+      <Property Name="Copier" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="SHS.Sage.IdentifiableCopier">
+    <Position X="15.5" Y="4" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SHS.Sage.ProxiedIdentifiableCopier">
+    <Position X="15.5" Y="6.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SHS.Sage.ORepository" Collapsed="true">
+    <Position X="6" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>pBAAgEACICAEADtCMIoAGAAAV4MIAEMEAKAAIIAABAA=</HashCode>
+      <FileName>ORepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_tracking" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SHS.Sage.Linq.Runtime.IdentifiableProxyBuilder">
+    <Position X="17.5" Y="8.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="SHS.Sage.ICopyIdentifiables">
+    <Position X="13.25" Y="4" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.IRepository" Collapsed="true">
+    <Position X="6" Y="6.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.IIdentifiable" Collapsed="true">
+    <Position X="13.25" Y="6.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.Linq.Runtime.IProxyIdentifiable">
+    <Position X="17.5" Y="6.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.ICloneable&lt;T&gt;" Collapsed="true">
+    <Position X="17.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.ICloneable" Collapsed="true">
+    <Position X="17.5" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.ICopyable" Collapsed="true">
+    <Position X="19.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.ICopyable&lt;T&gt;" Collapsed="true">
+    <Position X="19.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.ITrackingRepository">
+    <Position X="6" Y="2.5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

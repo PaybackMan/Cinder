@@ -1,0 +1,1 @@
+MainPackage=C:\Repos\Cinder\Cinder.Windows.AdminTool\bin\x64\Debug\Cinder.Windows.AdminTool_1.0.0.0_x64_Debug.appx

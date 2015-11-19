@@ -1,0 +1,88 @@
+﻿		[SHS.Sage.Ignore]
+		private bool _@propertyNameIsLoaded = false;
+		[SHS.Sage.Ignore]
+        private @baseTypeName _@propertyName;
+		[SHS.Sage.Ignore]
+		private string[] ____@propertyNameIds;
+        private string[] __@propertyNameIds 
+		{ 
+			get 
+			{ 
+				if (_@propertyName != null)
+				{
+					// always read from the source if it's available, as Ids may change between reads
+					____@propertyNameIds = new string[_@propertyName.Count()];
+					for(int i = 0; i < _@propertyName.Count(); i++)
+					{
+						____@propertyNameIds[i] = _@propertyName.ElementAt(i).Id;
+					}
+				}
+				return ____@propertyNameIds; 
+			}
+			set
+			{
+				if (value != null)
+				{
+					____@propertyNameIds = value;
+					if (_@propertyName != null)
+					{
+						for(int i = 0; i < value.Length; i++)
+						{
+							if (string.IsNullOrEmpty(_@propertyName.ElementAt(i).Id))
+							{ 
+								_@propertyName.ElementAt(i).Id = value[i];
+							}
+						}
+						_@propertyNameIsLoaded = true;
+					}
+				}
+			}
+		}
+
+        public override @baseTypeName @propertyName
+        {
+            get
+            {
+                if (CanDeferLoad && PolicyAllowsDeferredLoading && !_@propertyNameIsLoaded)
+                {
+                    if (IsValid && __@propertyNameIds != null)
+                    {
+                        _@propertyName = _repository.ExecuteEnumerable<@genTypeName>(string.Format("SELECT *, @rid as +rid, @class as +class FROM {0}", ToOrientIdArray(__@propertyNameIds)))@aggregator;
+						____@propertyNameIds = new string[_@propertyName.Count()];
+						for(int i = 0; i < _@propertyName.Count(); i++)
+						{
+							____@propertyNameIds[i] = _@propertyName.ElementAt(i).Id;
+						}
+                    }
+                    _@propertyNameIsLoaded = true;
+                }
+                return _@propertyName;
+            }
+
+            set
+            {
+				if ((IsInitializing && value != null) || !IsInitializing)
+				{
+					_@propertyName = value;
+					if (value != null)
+					{
+						____@propertyNameIds = new string[_@propertyName.Count()];
+						for(int i = 0; i < _@propertyName.Count(); i++)
+						{
+							var item = value.ElementAt(i);
+							if (item != null && _repository is ITrackingRepository)
+							{
+								item = (@genTypeName)((ITrackingRepository)this._repository).Attach((IIdentifiable)item, TrackingState.Unknown);
+								if (value is System.Collections.IList)
+								{
+									((System.Collections.IList)value)[i] = item;
+								}
+							}
+							____@propertyNameIds[i] = item.Id;
+						}
+					}
+
+					_@propertyNameIsLoaded = true;
+				}	
+            }
+        }

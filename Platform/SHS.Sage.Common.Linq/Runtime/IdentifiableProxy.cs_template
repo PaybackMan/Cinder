@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SHS.Sage;
+using SHS.Sage.Linq.Runtime;
+using SHS.Platform.ObjectModel;
+using @baseNamespace;
+
+namespace @baseNamespace
+{
+    public sealed class @className : @baseTypeName, IProxyIdentifiable
+    {
+        IRepository _repository;
+
+		public IRepository Repository
+		{
+			get
+			{
+				return _repository;
+			}
+		}
+
+        public bool IsValid
+        {
+            get
+            {
+                return _repository.IsValid && this.Id != "#Deleted";
+            }
+        }
+
+		public bool PolicyAllowsDeferredLoading
+        {
+            get
+            {
+                return _repository.Policy.DeferLoadComplexTypes;
+            }
+        }
+
+		private bool _canDeferLoad = true;
+		public bool CanDeferLoad 
+		{ 
+			get { return _canDeferLoad; }
+			set { _canDeferLoad = value; }
+		}
+
+		public bool IsInitializing { get; set; }
+
+        public Type IdentifiableType
+        {
+            get
+            {
+                return this.GetType().BaseType;
+            }
+        }
+
+        public @className(IRepository repository)
+        {
+            _repository = repository;
+        }
+
+        @scalarProps
+
+		@enumerableProps
+
+		private string ToOrientIdArray(string[] ids)
+		{
+			var sb = new StringBuilder();
+			sb.Append("[");
+
+			foreach(var id in ids)
+			{
+				if (sb.Length > 1)
+				{
+					sb.Append(", ");
+				}
+				sb.Append(id);
+			}
+
+			sb.Append("]");
+			return sb.ToString();
+		}
+    }
+}

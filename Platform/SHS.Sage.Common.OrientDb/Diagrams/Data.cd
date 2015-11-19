@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SHS.Sage.Data.ODataCommand">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="_database" Hidden="true" />
+      <Field Name="_params" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAICEAQEAAZASAAAAgAEACAAAAAAQBAAAAAAIQABA=</HashCode>
+      <FileName>Data\ODataCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Data.ODataConnection">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_database" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAEAAIgAAAAAAAQAAACAAAAQAACAABECAAAA=</HashCode>
+      <FileName>Data\ODataConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Data.ODataParameter">
+    <Position X="3.75" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAACAAAAAAAAAAADBAAAAgAgAAIAA=</HashCode>
+      <FileName>Data\ODataParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Data.ODataParameterCollection">
+    <Position X="0.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEIQAEAAAAAAABAAAAAAFAQAAAABAAAASAAAAABUIAA=</HashCode>
+      <FileName>Data\ODataParameterCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Data.ODataReader">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_command" Hidden="true" />
+      <Field Name="_enumerator" Hidden="true" />
+      <Field Name="_isExecuted" Hidden="true" />
+      <Field Name="_operation" Hidden="true" />
+      <Field Name="_reader" Hidden="true" />
+      <Field Name="_response" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAGQAAAgICgAADQBCAAABCIgAAJEAEQwKBQAARAAJFA=</HashCode>
+      <FileName>Data\ODataReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="SHS.Sage.Data.ORecordDeserializer">
+    <Position X="10" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAEMCQAgggAARAEBAEQAAgCCABIIEAAAQAggAgAAAA=</HashCode>
+      <FileName>Data\ORecordDeserializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Data.OResponseReader">
+    <Position X="3.75" Y="7.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SHS.Sage.Data.OResponseReader.Enumerator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Data\OResponseReader.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="SHS.Sage.Data.OResponseReader.ODataRecord" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Data\OResponseReader.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAAABAADABAgAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Data\OResponseReader.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.798" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

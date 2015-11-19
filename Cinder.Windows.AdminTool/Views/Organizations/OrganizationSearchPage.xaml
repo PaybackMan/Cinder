@@ -1,0 +1,57 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cinder.Windows.DocFlock.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="using:Prism.Windows.Mvvm"
+    xmlns:Organizations="using:SHS.Windows.DocFlock.Views.Organizations"
+    xmlns:SampleData="using:Blend.SampleData.SampleDataSource"
+    x:Class="Cinder.Windows.DocFlock.Views.OrganizationSearchPage"
+    prism:ViewModelLocator.AutoWireViewModel="true"
+    mc:Ignorable="d" d:DataContext="{d:DesignData /SampleData/OrganizationSearchViewModelSampleData.xaml}">
+    <Page.Resources>
+      
+        <Organizations:OrganizationSearchPageViewModel x:Key="OrganizationSearchPageViewModelDataSource" d:IsDataSource="True"/>
+        <DataTemplate x:Key="OrganizationTemplate">
+            <Grid Height="110" Width="480" Margin="10" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="110" Height="110">
+                    <Image Height="110" Width="110"/>
+                </Border>
+                <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                    <TextBlock Text="{Binding Id}" Style="{StaticResource TitleTextBlockStyle}"/>
+                    <TextBlock Text="{Binding Name}" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="NoWrap"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="OrganizationTemplate1">
+            <Grid Height="110" Width="480" Margin="10" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Width="110" Height="110">
+                    <Image Height="110" Width="110"/>
+                </Border>
+                <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                    <TextBlock Text="{Binding Id}" Style="{StaticResource TitleTextBlockStyle}"/>
+                    <TextBlock Text="{Binding Name}" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="NoWrap"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <StackPanel Background="Black" Margin="10,10,0,0" d:DataContext="{d:DesignData /SampleData/OrganizationSearchViewModelSampleData.xaml}" >
+        <RelativePanel Height="65" Margin="0,0,10,0" Background="#FF151414">
+            <TextBlock TextWrapping="Wrap" Text="Organization Name" Margin="20,0,-170,-45" Height="35" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment" FontSize="26.667"/>
+            <TextBox x:Name="textBox" Margin="290,0,-740,-55" TextWrapping="Wrap" Text="" Height="45" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment" FontSize="26.667"/>
+            <Button x:Name="button" Content="Search" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="44" Margin="0,0,-875,-55" Width="115" Foreground="#FFE8E1E1" Background="#332C2929" FontSize="26.667"/>
+        </RelativePanel>
+        <ListView x:Name="listView" ItemsSource="{Binding Organizations}" ItemTemplate="{StaticResource OrganizationTemplate1}" d:DataContext="{d:DesignData /SampleData/OrganizationSearchPageViewModelSampleData.xaml}" Background="#FF040404" Margin="0,0,20,0" Height="1005"/>
+
+    </StackPanel>
+</Page>

@@ -1,0 +1,10 @@
+﻿<windows1:PrismUnityApplication
+    x:Class="Cinder.Windows.AdminTool.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Cinder.Windows.AdminTool"
+    xmlns:system="using:System"
+    xmlns:windows="using:Prism.Windows"
+    xmlns:windows1="using:Prism.Unity.Windows"
+    RequestedTheme="Dark">
+</windows1:PrismUnityApplication>

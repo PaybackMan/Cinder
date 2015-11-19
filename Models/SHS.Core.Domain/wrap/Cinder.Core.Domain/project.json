@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45+dnxcore50+win+wpa81+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10": {
+      "wrappedProject": "../../Cinder.Core.Domain.csproj",
+      "bin": {
+        "assembly": "../../obj/{configuration}/Cinder.Core.Domain.dll",
+        "pdb": "../../obj/{configuration}/Cinder.Core.Domain.pdb"
+      }
+    }
+  }
+}

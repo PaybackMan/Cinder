@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Interface Name="SHS.Sage.IRepository">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <AssociationLine Name="Policy" Type="SHS.Sage.IQueryPolicy" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="2" />
+        <Point X="5.125" Y="2" />
+        <Point X="5.125" Y="3.375" />
+        <Point X="5.75" Y="3.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="-0.2" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAABAAAoAAAAAAAAAAAEAACAAAIAAAAA=</HashCode>
+      <FileName>IRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Policy" />
+      <Property Name="QueryCache" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="SHS.Sage.IExecuteQueries">
+    <Position X="2.75" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IExecuteQueries.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.ICacheQueries">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAACQAAAAAAAAAAAAAAABQAAA=</HashCode>
+      <FileName>ICacheQueries.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IQueryPolicy">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEEAAAAAAAQAAAAAACAAAAAAAAAAIIAA=</HashCode>
+      <FileName>IQueryPolicy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IIdentifiable">
+    <Position X="2.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIdentifiable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IThing" Collapsed="true">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IThing.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IIdentifiableSet&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.75" />
+    <InheritanceLine Type="SHS.Sage.IDataSet&lt;T&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="8.875" Y="2.75" />
+        <Point X="8.875" Y="0.875" />
+        <Point X="10.25" Y="0.875" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIdentifiableSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IIdentifiableSet" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIdentifiableSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="System.Linq.IOrderedQueryable" Collapsed="true" HideInheritanceLine="true">
+    <Position X="12.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.IDataSet" Collapsed="true" HideInheritanceLine="true">
+    <Position X="10.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="System.Linq.IQueryable" Collapsed="true">
+    <Position X="12.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="System.Collections.IEnumerable" Collapsed="true">
+    <Position X="12.5" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="SHS.Sage.IActor" Collapsed="true">
+    <Position X="4.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IActor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IThingSet&lt;T&gt;" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>IThingSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IThingSet" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IThingSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IDataSet&lt;T&gt;" Collapsed="true">
+    <Position X="8" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDataSet.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IAssociation" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="SHS.Sage.IIdentifiable" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="6.125" />
+        <Point X="2" Y="6.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IAssociation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.IActivity" Collapsed="true">
+    <Position X="2.5" Y="7.25" Width="1.5" />
+    <InheritanceLine Type="SHS.Sage.IIdentifiable" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.188" Y="6.853" />
+        <Point X="3.188" Y="7.052" />
+        <Point X="3.188" Y="7.052" />
+        <Point X="3.188" Y="7.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IActivity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SHS.Sage.ITrackingRepository">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEAAAAAAAAIAAAAAEAAAAIEAAEAAAAAAIAAAAAA=</HashCode>
+      <FileName>ITrackingRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SHS.Sage.TrackingState">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAABBAAACAAAAAAAAAAAABA=</HashCode>
+      <FileName>ITrackingRepository.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

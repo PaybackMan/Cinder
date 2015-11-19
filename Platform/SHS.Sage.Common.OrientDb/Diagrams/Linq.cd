@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SHS.Sage.Linq.OQueryProvider">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAACAAAAAEBACAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\OQueryProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SHS.Sage.Linq.OExecutionBuilder">
+    <Position X="9.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAkAgAAA0AAAAAAAAAAAQACAgEgEgAAAgAAQAAACg=</HashCode>
+      <FileName>Linq\OExecutionBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Linq.ExecutionBuilder">
+    <Position X="9.25" Y="5.75" Width="2.75" />
+    <Members>
+      <Field Name="nReaders" Hidden="true" />
+      <Field Name="scope" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SHS.Sage.Linq.ExecutionBuilder.BuilderScope">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="SHS.Sage.Linq.ExecutionBuilder.ProjectionFinder">
+        <TypeIdentifier />
+      </Class>
+      <Class Name="SHS.Sage.Linq.ExecutionBuilder.EntityFinder">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Linguist" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SHS.Sage.Linq.DataProvider">
+    <Position X="0.5" Y="8.25" Width="2.5" />
+    <AssociationLine Name="Mapping" Type="SHS.Sage.Linq.Mapping.QueryMapping" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="8.531" />
+        <Point X="3.375" Y="8.531" />
+        <Point X="3.375" Y="2.494" />
+        <Point X="4.75" Y="2.494" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier />
+    <ShowAsAssociation>
+      <Property Name="Mapping" />
+      <Property Name="Language" />
+      <Property Name="Policy" />
+      <Property Name="Repository" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Bottom" Position="2.3" />
+  </Class>
+  <Class Name="SHS.Sage.Linq.Language.QueryLanguage">
+    <Position X="4.75" Y="4.75" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SHS.Sage.Linq.Mapping.QueryMapping">
+    <Position X="4.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SHS.Sage.Linq.QueryPolicy">
+    <Position X="4.75" Y="9.5" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="SHS.Sage.Linq.Policy.OQueryPolicy">
+    <Position X="7.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAABAAAAAAoAgCAQAAA=</HashCode>
+      <FileName>Linq\Policy\OQueryPolicy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SHS.Sage.Linq.Language.OQueryLanguage">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <Members>
+      <Field Name="_typeSystem" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAgEAAAACAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\Language\OQueryLanguage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Linq.OFieldReader">
+    <Position X="17.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Linq\OFieldReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Linq.DataFieldReader">
+    <Position X="17.25" Y="2.25" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SHS.Sage.Linq.OTypeBuilder">
+    <Position X="17.25" Y="7.25" Width="2.25" />
+    <Members>
+      <Field Name="_lock" Hidden="true" />
+      <Field Name="_nativeInitializers" Hidden="true" />
+      <Field Name="_proxiedInitializers" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="SHS.Sage.Linq.OTypeBuilder.CachedInitializer&lt;T&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Linq\OTypeBuilder.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAgQAIBEAEAAAEgAAAAAAAAAAAAAAAEAIAAAAAAAIA=</HashCode>
+      <FileName>Linq\OTypeBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Linq.Language.QueryLinguist" Collapsed="true">
+    <Position X="13.5" Y="9" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SHS.Sage.Linq.Language.OQueryLinguist">
+    <Position X="13.5" Y="10.25" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SHS.Sage.Linq.Language.OQueryLinguist.OQueryWriter">
+        <Members>
+          <Field Name="_aliases" Hidden="true" />
+          <Field Name="_depth" Hidden="true" />
+          <Field Name="_forDebug" Hidden="true" />
+          <Field Name="_hideFieldAliases" Hidden="true" />
+          <Field Name="_hideIdentifiableAliases" Hidden="true" />
+          <Field Name="_indent" Hidden="true" />
+          <Field Name="_isNested" Hidden="true" />
+          <Field Name="_language" Hidden="true" />
+          <Field Name="_query" Hidden="true" />
+          <Field Name="_sw" Hidden="true" />
+        </Members>
+        <Compartments>
+          <Compartment Name="Nested Types" Collapsed="false" />
+        </Compartments>
+        <NestedTypes>
+          <Enum Name="SHS.Sage.Linq.Language.OQueryLinguist.OQueryWriter.Indentation" Collapsed="true">
+            <TypeIdentifier>
+              <NewMemberFileName>Linq\Language\OQueryLinguist.cs</NewMemberFileName>
+            </TypeIdentifier>
+          </Enum>
+        </NestedTypes>
+        <TypeIdentifier>
+          <NewMemberFileName>Linq\Language\OQueryLinguist.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAACEAAAAAAA=</HashCode>
+      <FileName>Linq\Language\OQueryLinguist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SHS.Sage.Linq.Translation.QueryBinder">
+    <Position X="13.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="SHS.Sage.Linq.Translation.OQueryBinder">
+    <Position X="13.5" Y="5.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAgAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Linq\Translation\OQueryBinder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SHS.Sage.IRepository">
+    <Position X="4.75" Y="13.25" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

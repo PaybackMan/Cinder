@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F28EB4E-109E-4778-AAE0-5CF93F9010FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SHS.Sage.Common</RootNamespace>
+    <AssemblyName>SHS.Sage.Common.OrientDb</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Local|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Local\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\API\Exceptions\OException.cs" />
+    <Compile Include="Client\API\Exceptions\OExceptionType.cs" />
+    <Compile Include="Client\API\OClient.cs" />
+    <Compile Include="Client\API\OCluster.cs" />
+    <Compile Include="Client\API\OClusterType.cs" />
+    <Compile Include="Client\API\ODatabase.cs" />
+    <Compile Include="Client\API\ODatabaseType.cs" />
+    <Compile Include="Client\API\OProperty.cs" />
+    <Compile Include="Client\API\ORecordType.cs" />
+    <Compile Include="Client\API\OServer.cs" />
+    <Compile Include="Client\API\OStorageType.cs" />
+    <Compile Include="Client\API\OTransaction.cs" />
+    <Compile Include="Client\API\Query\OCommandResult.cs" />
+    <Compile Include="Client\API\Query\OCreateEdgeRecord.cs" />
+    <Compile Include="Client\API\Query\OCreateVertexRecord.cs" />
+    <Compile Include="Client\API\Query\OLoadRecord.cs" />
+    <Compile Include="Client\API\Query\ORecordMetadata.cs" />
+    <Compile Include="Client\API\Query\OSqlCreate.cs" />
+    <Compile Include="Client\API\Query\OSqlCreateClass.cs" />
+    <Compile Include="Client\API\Query\OSqlCreateCluster.cs" />
+    <Compile Include="Client\API\Query\OSqlCreateDocument.cs" />
+    <Compile Include="Client\API\Query\OSqlCreateEdge.cs" />
+    <Compile Include="Client\API\Query\OSqlCreateProperty.cs" />
+    <Compile Include="Client\API\Query\OSqlCreateVertex.cs" />
+    <Compile Include="Client\API\Query\OSqlDelete.cs" />
+    <Compile Include="Client\API\Query\OSqlDeleteDocument.cs" />
+    <Compile Include="Client\API\Query\OSqlDeleteEdge.cs" />
+    <Compile Include="Client\API\Query\OSqlDeleteVertex.cs" />
+    <Compile Include="Client\API\Query\OSqlInsert.cs" />
+    <Compile Include="Client\API\Query\OSqlSelect.cs" />
+    <Compile Include="Client\API\Query\OSqlTraverse.cs" />
+    <Compile Include="Client\API\Query\OSqlUpdate.cs" />
+    <Compile Include="Client\API\Types\IBaseRecord.cs" />
+    <Compile Include="Client\API\Types\OBaseRecord.cs" />
+    <Compile Include="Client\API\Types\ODocument.cs" />
+    <Compile Include="Client\API\Types\OEdge.cs" />
+    <Compile Include="Client\API\Types\OLinkCollection.cs" />
+    <Compile Include="Client\API\Types\ORecordFormat.cs" />
+    <Compile Include="Client\API\Types\ORID.cs" />
+    <Compile Include="Client\API\Types\OType.cs" />
+    <Compile Include="Client\API\Types\OVertex.cs" />
+    <Compile Include="Client\API\Types\Vertex.cs" />
+    <Compile Include="Client\Mapping\AllFieldMapping.cs" />
+    <Compile Include="Client\Mapping\BasicFieldMapping.cs" />
+    <Compile Include="Client\Mapping\ClassFieldMapping.cs" />
+    <Compile Include="Client\Mapping\CollectionFieldMapping.cs" />
+    <Compile Include="Client\Mapping\FastPropertyAccessor.cs" />
+    <Compile Include="Client\Mapping\FieldMapping.cs" />
+    <Compile Include="Client\Mapping\ORIDFieldMapping.cs" />
+    <Compile Include="Client\Mapping\TypeMapper.cs" />
+    <Compile Include="Client\Protocol\BinaryReaderHelper.cs" />
+    <Compile Include="Client\Protocol\Connection.cs" />
+    <Compile Include="Client\Protocol\ConnectionType.cs" />
+    <Compile Include="Client\Protocol\DatabasePool.cs" />
+    <Compile Include="Client\Protocol\Operations\Command.cs" />
+    <Compile Include="Client\Protocol\Operations\CommandClassType.cs" />
+    <Compile Include="Client\Protocol\Operations\CommandPayload.cs" />
+    <Compile Include="Client\Protocol\Operations\CommandPayloadType.cs" />
+    <Compile Include="Client\Protocol\Operations\CommitTransaction.cs" />
+    <Compile Include="Client\Protocol\Operations\ConfigGet.cs" />
+    <Compile Include="Client\Protocol\Operations\ConfigList.cs" />
+    <Compile Include="Client\Protocol\Operations\ConfigSet.cs" />
+    <Compile Include="Client\Protocol\Operations\Connect.cs" />
+    <Compile Include="Client\Protocol\Operations\CreateRecord.cs" />
+    <Compile Include="Client\Protocol\Operations\DbClose.cs" />
+    <Compile Include="Client\Protocol\Operations\DbCreate.cs" />
+    <Compile Include="Client\Protocol\Operations\DbDrop.cs" />
+    <Compile Include="Client\Protocol\Operations\DbExist.cs" />
+    <Compile Include="Client\Protocol\Operations\DBList.cs" />
+    <Compile Include="Client\Protocol\Operations\DbOpen.cs" />
+    <Compile Include="Client\Protocol\Operations\DbReload.cs" />
+    <Compile Include="Client\Protocol\Operations\IOperation.cs" />
+    <Compile Include="Client\Protocol\Operations\LoadRecord.cs" />
+    <Compile Include="Client\Protocol\Operations\OperationMode.cs" />
+    <Compile Include="Client\Protocol\Operations\OperationType.cs" />
+    <Compile Include="Client\Protocol\Operations\RecordMetadata.cs" />
+    <Compile Include="Client\Protocol\Operations\TransactionRecord.cs" />
+    <Compile Include="Client\Protocol\Operations\TypedTransactionRecord.cs" />
+    <Compile Include="Client\Protocol\PayloadStatus.cs" />
+    <Compile Include="Client\Protocol\Query\Q.cs" />
+    <Compile Include="Client\Protocol\Query\QueryCompiler.cs" />
+    <Compile Include="Client\Protocol\Query\QueryType.cs" />
+    <Compile Include="Client\Protocol\Query\SqlQuery.cs" />
+    <Compile Include="Client\Protocol\Request.cs" />
+    <Compile Include="Client\Protocol\RequestDataItem.cs" />
+    <Compile Include="Client\Protocol\Response.cs" />
+    <Compile Include="Client\Protocol\ResponseStatus.cs" />
+    <Compile Include="Client\Protocol\Serializers\BinarySerializer.cs" />
+    <Compile Include="Client\Protocol\Serializers\RecordSerializer.cs" />
+    <Compile Include="Client\Transactions\ORIDArrayPropertyUpdater.cs" />
+    <Compile Include="Client\Transactions\ORIDHashSetUpdater.cs" />
+    <Compile Include="Client\Transactions\ORIDListPropertyUpdater.cs" />
+    <Compile Include="Client\Transactions\ORIDPropertyUpdater.cs" />
+    <Compile Include="Client\Transactions\ORIDSimplePropertyUpdater.cs" />
+    <Compile Include="Client\Transactions\ORIDUpdater.cs" />
+    <Compile Include="Data\ODataCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ODataConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\ODataParameter.cs" />
+    <Compile Include="Data\ODataParameterCollection.cs" />
+    <Compile Include="Data\ODataReader.cs" />
+    <Compile Include="Data\ORecordDeserializer.cs" />
+    <Compile Include="Data\OResponseReader.cs" />
+    <Compile Include="Linq\Expressions\Command\OInsertCommandExpression.cs" />
+    <Compile Include="Linq\Expressions\Command\OUpdateCommandExpression.cs" />
+    <Compile Include="Linq\Expressions\OQueryable.cs" />
+    <Compile Include="Linq\Expressions\OAssociationFilterBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\OAssociationFilterTerminalExpression.cs" />
+    <Compile Include="Linq\Expressions\OAssociationFilterExpression.cs" />
+    <Compile Include="Linq\Language\OQueryExpressionStringifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Linq\Language\OQueryFormatter.cs" />
+    <Compile Include="Linq\Language\OQueryLanguage.cs" />
+    <Compile Include="Linq\Language\OQueryLinguist.cs" />
+    <Compile Include="Linq\Language\OStorageType.cs" />
+    <Compile Include="Linq\Language\OTypeSystem.cs" />
+    <Compile Include="Linq\Mapping\OFluentMapper.cs" />
+    <Compile Include="Linq\Mapping\OMappingEntity.cs" />
+    <Compile Include="Linq\Mapping\OMappingProperty.cs" />
+    <Compile Include="Linq\Mapping\OTypeMapper.cs" />
+    <Compile Include="Linq\Mapping\OTypeMapping.cs" />
+    <Compile Include="Linq\ODbExpressionType.cs" />
+    <Compile Include="Linq\ODbExpressionWriter.cs" />
+    <Compile Include="Linq\OExecutionBuilder.cs" />
+    <Compile Include="Linq\OFieldFinder.cs" />
+    <Compile Include="Linq\OFieldReader.cs" />
+    <Compile Include="Linq\OQueryExecutor.cs" />
+    <Compile Include="Linq\OQueryProvider.cs" />
+    <Compile Include="Linq\OTrackingQueryExecutor.cs" />
+    <Compile Include="Linq\OTrackingQueryProvider.cs" />
+    <Compile Include="Linq\OTypeBuilder.cs" />
+    <Compile Include="Linq\Policy\OQueryPolice.cs" />
+    <Compile Include="Linq\Policy\OQueryPolicy.cs" />
+    <Compile Include="Linq\Translation\MissingLimitAdder.cs" />
+    <Compile Include="Linq\Translation\OAggregateRewriter.cs" />
+    <Compile Include="Linq\Translation\OComparisonRewriter.cs" />
+    <Compile Include="Linq\Translation\OParameterizer.cs" />
+    <Compile Include="Linq\Translation\OQueryBinder.cs" />
+    <Compile Include="Linq\Translation\ORedunadantFieldRemover.cs" />
+    <Compile Include="Linq\Translation\ORedundantJoinRemover.cs" />
+    <Compile Include="Linq\Translation\ORedundantSubqueryRemover.cs" />
+    <Compile Include="Linq\Translation\ORelationshipBinder.cs" />
+    <Compile Include="Linq\Translation\ORelationshipIncluder.cs" />
+    <Compile Include="Linq\Translation\OSubqueryRemover.cs" />
+    <Compile Include="Linq\Translation\OUnusedFieldRemover.cs" />
+    <Compile Include="OAssociationSet.cs" />
+    <Compile Include="OActivitySet.cs" />
+    <Compile Include="OThingSet.cs" />
+    <Compile Include="ORepository.cs" />
+    <Compile Include="ORepository.Persistence.cs">
+      <DependentUpon>ORepository.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\OClass.cs" />
+    <Compile Include="Schema\OProperty.cs" />
+    <Compile Include="Schema\OSchema.cs" />
+    <Compile Include="Schema\OSchemaBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagrams\Data.cd" />
+    <None Include="Diagrams\Linq.cd" />
+    <None Include="Diagrams\Repository.cd" />
+    <None Include="Diagrams\UnitOfWork.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SHS.Platform.Common\SHS.Platform.Common.csproj">
+      <Project>{5D09D172-5756-48FD-89CC-C02681641843}</Project>
+      <Name>SHS.Platform.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SHS.Sage.Common.Linq\SHS.Sage.Common.Linq.csproj">
+      <Project>{ED4D7A11-B22D-4DDC-B93E-4433CE5673D0}</Project>
+      <Name>SHS.Sage.Common.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SHS.Sage.Common\SHS.Sage.Common.csproj">
+      <Project>{46FAFFFC-F353-456B-AC64-50CA83A76EEB}</Project>
+      <Name>SHS.Sage.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

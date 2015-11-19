@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46FAFFFC-F353-456B-AC64-50CA83A76EEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SHS.Sage</RootNamespace>
+    <AssemblyName>SHS.Sage.Common</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Local|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Local\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="Diagrams\IRepository.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IActivity.cs" />
+    <Compile Include="IActivitySet.cs" />
+    <Compile Include="IActor.cs" />
+    <Compile Include="IAssociation.cs" />
+    <Compile Include="IAssociationSet.cs" />
+    <Compile Include="ICacheQueries.cs" />
+    <Compile Include="ICloneable.cs" />
+    <Compile Include="ICopyable.cs" />
+    <Compile Include="ICopyIdentifiables.cs" />
+    <Compile Include="IDataSet.cs" />
+    <Compile Include="Mapping\IFluentMapper.cs" />
+    <Compile Include="Mapping\IMappedProperty.cs" />
+    <Compile Include="_Actor.cs" />
+    <Compile Include="_Association.cs" />
+    <Compile Include="_Thing.cs" />
+    <Compile Include="IEntitlement.cs" />
+    <Compile Include="IExecuteQueries.cs" />
+    <Compile Include="IgnoreAttribute.cs" />
+    <Compile Include="IIdentifiable.cs" />
+    <Compile Include="IIdentifiableSet.cs" />
+    <Compile Include="IPermission.cs" />
+    <Compile Include="IQueryPolicy.cs" />
+    <Compile Include="IReadData.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IScalar.cs" />
+    <Compile Include="IThing.cs" />
+    <Compile Include="IThingSet.cs" />
+    <Compile Include="ITrackingRepository.cs" />
+    <Compile Include="Linq\ActivitySet.cs" />
+    <Compile Include="Linq\DataSet.cs" />
+    <Compile Include="Linq\AssociationSet.cs" />
+    <Compile Include="Linq\Extensions.cs" />
+    <Compile Include="Linq\IdentifiableSet.cs" />
+    <Compile Include="Linq\IIdentifiableProvider.cs" />
+    <Compile Include="Linq\IProvideQueryText.cs" />
+    <Compile Include="Linq\QueryProvider.cs" />
+    <Compile Include="Linq\Runtime\IProxyIdentifiable.cs" />
+    <Compile Include="Linq\ThingSet.cs" />
+    <Compile Include="Linq\TypeSystem.cs" />
+    <Compile Include="Mapping\IMapEntities.cs" />
+    <Compile Include="Mapping\IMappedEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schema\IBuildSchema.cs" />
+    <Compile Include="Schema\IClass.cs" />
+    <Compile Include="Schema\IProperty.cs" />
+    <Compile Include="Schema\ISchema.cs" />
+    <Compile Include="UnitOfWork\TrackedIdentifiable.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

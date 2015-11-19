@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net46": {
+      "wrappedProject": "../../SHS.Sage.csproj",
+      "bin": {
+        "assembly": "../../obj/{configuration}/SHS.Sage.dll",
+        "pdb": "../../obj/{configuration}/SHS.Sage.pdb"
+      }
+    }
+  }
+}

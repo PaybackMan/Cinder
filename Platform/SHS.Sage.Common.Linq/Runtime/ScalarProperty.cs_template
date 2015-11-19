@@ -1,0 +1,59 @@
+﻿		[SHS.Sage.Ignore]
+		private bool _@propertyNameIsLoaded = false;
+		[SHS.Sage.Ignore]
+        private @baseTypeName _@propertyName;
+		[SHS.Sage.Ignore]
+		private string ____@propertyNameId;
+        private string __@propertyNameId 
+		{ 
+			get 
+			{ 
+				if (string.IsNullOrEmpty(____@propertyNameId) && _@propertyName != null)
+				{
+					____@propertyNameId = _@propertyName.Id;
+				}
+				return ____@propertyNameId; 
+			}
+			set
+			{
+				if (value != null)
+				{
+					____@propertyNameId = value;
+					if (_@propertyName != null)
+					{
+						_@propertyName.Id = value;
+						_@propertyNameIsLoaded = true;
+					}
+				}
+			} 
+		}
+
+        public override @baseTypeName @propertyName
+        {
+            get
+            {
+                if (CanDeferLoad && PolicyAllowsDeferredLoading && !_@propertyNameIsLoaded)
+                {
+                    if (IsValid && !string.IsNullOrEmpty(__@propertyNameId))
+                    {
+                        _@propertyName = (@baseTypeName)_repository.Get(__@propertyNameId);
+                    }
+                    _@propertyNameIsLoaded = true;
+                }
+                return _@propertyName;
+            }
+
+            set
+            {
+				if ((IsInitializing && value != null) || !IsInitializing)
+				{
+					if (value != null && _repository is ITrackingRepository)
+					{
+						value = ((ITrackingRepository)this._repository).Attach<@baseTypeName>(value, TrackingState.Unknown);
+					}
+					_@propertyName = value;
+					____@propertyNameId = value == null ? null : value.Id;
+					_@propertyNameIsLoaded = true;
+				}
+            }
+        }

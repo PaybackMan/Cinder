@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SHS.Sage
+{
+    public interface IActivity : IIdentifiable
+    {
+        IThing Subject { get; set; }
+        IThing DirectObject { get; set; }
+    }
+}

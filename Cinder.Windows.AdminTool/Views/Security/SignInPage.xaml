@@ -1,0 +1,205 @@
+﻿<Page x:Name="page"
+    x:Class="Cinder.Windows.AdminTool.Views.SignInPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Cinder.Windows.AdminTool.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="using:Prism.Windows.Mvvm"
+    xmlns:valueConv="using:Cinder.Windows.ValueConverters"  
+    prism:ViewModelLocator.AutoWireViewModel="true"
+    mc:Ignorable="d" RequestedTheme="Dark" Width="2715" Height="1630">
+    <Page.Resources>
+        <valueConv:BooleanToVisibilityConverter x:Key="Converter" />
+    </Page.Resources>
+    <Page.Background>
+        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/GraphAndTie.jpg"/>
+    </Page.Background>
+
+    <RelativePanel Name="MainPanel" HorizontalAlignment="Left" Margin="0,9.533,-55,0.467" RequestedTheme="Dark" Width="2770" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStatePhone">
+                    <VisualState.Setters>
+                        <Setter Target="MainPanel.(FrameworkElement.Width)" Value="620"/>
+                        <Setter Target="MainPanel.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,11.052,0,43.799</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="MainPanel.(Panel.Background).(TileBrush.Stretch)" Value="None"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateTablet">
+                    <VisualState.Setters>
+                        <Setter Target="InputPanel.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,10,-620,-1640</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="image1.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>69.8,23.793,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="border.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,-445,-124.192</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtUsername.(FrameworkElement.Width)" Value="398"/>
+                        <Setter Target="txtUsername.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,-445,-290.866</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtPassword.(FrameworkElement.Width)" Value="398"/>
+                        <Setter Target="txtPassword.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,-445,-400.094</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnAdditionalOptions.(FrameworkElement.Width)" Value="168"/>
+                        <Setter Target="btnAdditionalOptions.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,445.152,-215,-505.152</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnSignIn.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,535.606,-445,-595.606</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="btnSignIn.(FrameworkElement.Width)" Value="167"/>
+                        <Setter Target="MainPanel.(FrameworkElement.Width)" Value="NaN"/>
+                        <Setter Target="MainPanel.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,11.011,220,-1.011</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="page.(FrameworkElement.Width)" Value="950"/>
+                        <Setter Target="MainPanel.(FrameworkElement.HorizontalAlignment)" Value="Stretch"/>
+                        <Setter Target="MainPanel.(Panel.Background).(TileBrush.Stretch)" Value="None"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateDesktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="950"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <RelativePanel.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/SlickPoint.jpg"/>
+        </RelativePanel.Background>
+        <RelativePanel.RenderTransform>
+            <CompositeTransform SkewY="-0.081" TranslateY="-1.499"/>
+        </RelativePanel.RenderTransform>
+        <!--========================================================================================================================-->
+        <!--                                     OAuth Panel (Shows when user clicks Options button)                                -->
+        <!--========================================================================================================================-->
+        <RelativePanel Name="OAuthPanel" RenderTransformOrigin="0.5,0.5" Margin="0,0,-650,-10" Opacity="0.8" Visibility="{Binding OAuthElementsVisible, Converter={StaticResource Converter}}"  Height="1630" VerticalAlignment="Top">
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF373D49" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <Border x:Name="oAuthborder" BorderBrush="Black" BorderThickness="1" Margin="0,0,-681,-167">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF363130" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Image x:Name="oAuthBorderImg" HorizontalAlignment="Left" Height="89.399" VerticalAlignment="Top" Width="358" Source="ms-appx:///Assets/icon.png" Margin="137,26.457,0,-1"/>
+            </Border>
+            <TextBlock RelativePanel.Below="oAuthborder" FontSize="26" Text="You can also sign in with one the following accounts" Margin="10,172,72.767,-174.295"></TextBlock>
+
+            <Button Command="{Binding PickOAuthProviderCommand}">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="backButtonImage"  HorizontalAlignment="Left" Height="124" VerticalAlignment="Top" Width="123" Source="ms-appx:///Assets/back.png" Margin="236,1110,-359,-1234" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            
+          
+
+            <Button x:Name="btnGoogle"   Background="Brown" Content="Google" HorizontalAlignment="Right"  Margin="0,252,-523,1196" Width="410" FontSize="24" BorderBrush="#FF232064" Height="172">
+                <Button.Template>
+                    <ControlTemplate>
+                        <StackPanel Orientation="Horizontal" Padding="29" BorderBrush="Coral">
+                            <Image Source="ms-appx:///Assets/icon_google.png" />
+                            <TextBlock FontSize="63" Text="Google"></TextBlock>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnMicrosoft" RelativePanel.Below="btnGoogle" Background="White" Content="Microsoft" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,-1182,-523,1018" Width="410" FontSize="24">
+                <Button.Template>
+                    <ControlTemplate>
+                        <StackPanel Orientation="Horizontal" Padding="29" BorderBrush="Coral">
+                            <Image Source="ms-appx:///Assets/icon_microsoft.png" />
+                            <TextBlock FontSize="63" Text="Microsoft"></TextBlock>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnFaceBook"  RelativePanel.Below="btnMicrosoft" Background="#FF111147" Content="FaceBook" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,-999,-523,831" Width="410" FontSize="24">
+                <Button.Template>
+                    <ControlTemplate>
+                        <StackPanel Orientation="Horizontal" Padding="29" BorderBrush="Coral">
+                            <Image Source="ms-appx:///Assets/icon_facebook.png" />
+                            <TextBlock FontSize="63" Text="Facebook"></TextBlock>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnTwitter"   RelativePanel.Below="btnFaceBook" Background="Aquamarine" Content="Twitter" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,-797,-523,620" Width="410" FontSize="24">
+                <Button.Template>
+                    <ControlTemplate>
+                        <StackPanel Orientation="Horizontal" Padding="29" BorderBrush="Coral">
+                            <Image Source="ms-appx:///Assets/icon_twitter.png" />
+                            <TextBlock FontSize="63" Text="Twitter"></TextBlock>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </RelativePanel>
+        <!--========================================================================================================================-->
+        <!--                                               Custom Login Panel (Shown as Default)                                    -->
+        <!--========================================================================================================================-->
+        <RelativePanel Name="InputPanel" RenderTransformOrigin="0.5,0.5" Margin="0,0,-650,-1630" Opacity="0.8" Visibility="{Binding SignInElementsVisible, Converter={StaticResource Converter}}" d:IsHidden="True">
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF373D49" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <TextBlock  RelativePanel.AlignLeftWith="txtUsername" x:Name="textBlock" TextWrapping="Wrap" Text="Username" Height="55" VerticalAlignment="Top" FontSize="24" Margin="47,208,314,-210" RenderTransformOrigin="0.5,0.5"/>
+            <TextBox  x:Name="txtUsername" AcceptsReturn="False" Text="{Binding Path=Username, Mode=TwoWay}" TextWrapping="Wrap"  FontSize="24" HorizontalAlignment="Right" Height="42.863" Margin="0,0,-595,-290.866" VerticalAlignment="Bottom" Width="548" BorderBrush="White"/>
+            <TextBlock RelativePanel.AlignLeftWith="txtPassword" x:Name="lblPassword" TextWrapping="Wrap" Text="Password" Height="53" VerticalAlignment="Top" FontSize="24" Margin="47,315.229,318,-315.229" RenderTransformOrigin="0.5,0.5"/>
+            <TextBox Text="{Binding Path=Password, Mode=TwoWay}" RelativePanel.AlignLeftWith="btnAdditionalOptions" x:Name="txtPassword" TextWrapping="Wrap"  FontSize="24" HorizontalAlignment="Right" Height="42.863" Margin="0,0,-595,-400.094" VerticalAlignment="Bottom" Width="548" BorderBrush="White"/>
+            <Canvas HorizontalAlignment="Right" Height="88" Margin="0,0,-523,-158.255" VerticalAlignment="Bottom" Width="358"/>
+            <Button x:Name="btnSignIn" Command="{Binding SignInCommand}" Content="Sign In" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,445.152,-595,-505.152" Width="245" FontSize="24"/>
+            <Button RelativePanel.LeftOf="btnSignIn" Command="{Binding PickOAuthProviderCommand}" x:Name="btnAdditionalOptions" Content="Options" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,445.152,-310,-505.152" Width="263" RequestedTheme="Dark" FontSize="24" Click="btnAdditionalOptions_Click"/>
+            <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Margin="0,0,-650,-158">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF363130" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Image x:Name="image1" HorizontalAlignment="Left" Height="89.399" VerticalAlignment="Top" Width="358" Source="ms-appx:///Assets/icon.png" Margin="137,26.457,0,-1"/>
+            </Border>
+        </RelativePanel>
+
+    </RelativePanel>
+</Page>
